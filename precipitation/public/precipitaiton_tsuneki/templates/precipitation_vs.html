@@ -8,27 +8,36 @@
 </head>
 
 <body class="bg-01">
+    <div class="container">
 
-<h1>今日の田町は</h1>
-<form method="get" action="/">
-    <input type="submit" name="start" value="クリックして表示">
-</form>
+        <h1>今日の港区は</h1>
 
-{% if start %}
-<p>平均<strong>{{ average }}％</strong>です。</p>
-{% if average > 70 %}
+        <form method="get" action="/">
+            <input type="submit" name="start" value="クリックして表示">
+        </form>
 
-<h3>ヤバイ！洗濯は明日以降に。</h3>
-{% elif average > 40 %}
-<h3>降るでしょう。部屋干しのほうが安全か。</h3>
-{% elif average > 0 %}
-<h3>降るかも。外に干すか迷いますね。</h3>
-{% else %}
-<h3>今日こそ洗濯日和！</h3>
-{% endif %}
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">港区</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                {% if start %}
+                <p>平均<strong>{{ average }}％</strong>です。</p>
+                {% if average > 70 %}
+            </h6>
+            <p class="card-text">
+                <h3>ヤバイ！洗濯は明日以降に。</h3>
+                {% elif average > 40 %}
+                <h3>降るでしょう。部屋干しのほうが安全か。</h3>
+                {% elif average > 0 %}
+                <h3>降るかも。外に干すか迷いますね。</h3>
+                {% else %}
+                <h3>今日こそ洗濯日和！</h3>
+                {% endif %}</p>
+            </div>
+        </div>
 
 
-<ul class="d-flex border-top pt-3">
+<ul class="d-flex justify-content-around border-top pt-3">
     <li>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -66,6 +75,7 @@
 {% endif %}
 
 
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
