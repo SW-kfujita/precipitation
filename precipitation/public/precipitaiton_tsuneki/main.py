@@ -24,7 +24,7 @@ def index():
 
     data1 = get_jma(now)
     average = (int(data2)+int(data1))/2
-    return render_template("precipitation_vs.html",
+    return render_template("index.html",
                             start=start,
                             average=average,
                             data1 = data1,

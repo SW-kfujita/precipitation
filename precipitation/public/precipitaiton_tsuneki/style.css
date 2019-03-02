@@ -1,3 +1,7 @@
 li {
     list-style: none;
 }
+
+.bg-01 {
+    background: #eceff1;
+}
