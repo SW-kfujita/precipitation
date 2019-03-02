@@ -1,5 +1,6 @@
 {
   "projects": {
-    "master": "precipitation-47435"
+    "master": "precipitation-47435",
+    "default": "precipitation-47435"
   }
 }
