@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"> <!--lang="en"はどういう意味か？-->
+<head>
+    <meta charset="UTF-8">
+    <title>今日の降水確率比較</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<h1>今日の降水確率</h1>
+<form method="get" action="/">
+    <input type="submit" name="start" value="クリックして表示">
+</form>
+<br>
+
+{% if start %}
+<p>平均<strong>{{ average }}％</strong>です。</p>
+{% if average > 70 %}
+
+<h3>ヤバイ！洗濯は明日以降に。</h3>
+{% elif average > 40 %}
+<h3>降るでしょう。部屋干しのほうが安全か。</h3>
+{% elif average > 0 %}
+<h3>降るかも。外に干すか迷いますね。</h3>
+{% else %}
+<h3>今日こそ洗濯日和！</h3>
+{% endif %}
+
+<br>
+
+<p>データ元</p>
+<ul class="d-flex">
+    <li>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">気象庁</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ data1 }}％</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">日本気象協会</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ data2 }}％</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">ウェザーニュース</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ data3 }}％</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+    </li>
+</ul>
+{% endif %}
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
