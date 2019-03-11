@@ -25,13 +25,22 @@ def index():
 
     data1 = get_jma(now)
     data3 = 40
-    average = (int(data2)+int(data1)+data3)/3
+
+    average = (converter(data2)+converter(data1)+data3)/3
     return render_template("precipitation_vs.html",
                            start=start,
                            average=round(average, 1),
                            data1=data1,
                            data2=data2,
                            data3=data3)
+
+
+def converter(data):
+    if data in '-' or '--' :
+        data = 0
+    else:
+        data = int(data)
+    return data
 
 
 if __name__ == '__main__':
